@@ -1,0 +1,12 @@
+0a1
+> delete process.versions.node;
+22c23
+< }(this, function () {
+---
+> }(globalThis, function () {
+48c49,50
+<         
+\ No newline at end of file
+---
+>         
+> export const cv = globalThis.cv;
