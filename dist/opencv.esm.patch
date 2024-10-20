@@ -1,5 +1,5 @@
 0a1
-> delete process.versions.node;
+> if (globalThis.process) delete process.versions.node;
 22c23
 < }(this, function () {
 ---
