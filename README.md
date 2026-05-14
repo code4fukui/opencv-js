@@ -1,62 +1,106 @@
 # opencv-js
 
-OpenCV JavaScript version (NPM package) for node.js or browser. Get started guide [OpenCV.js Tutorials](https://docs.opencv.org/4.10.0/#:~:text=OpenCV%2DPython%20Tutorials-,OpenCV.js%20Tutorials,-Tutorials%20for%20contrib).
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-The file `opencv.js` was downloaded from https://docs.opencv.org/4.10.0/opencv.js
+[
+![NPM version](httpshttps://img.shields.io/npm/v/@techstark/opencv-js.svg)
+](https://www.npmjs.com/package/@techstark/opencv-js)
+[
+![License](https://img.shields.io/npm/l/@techstark/opencv-js.svg)
+](https://github.com/TechStark/opencv-js/blob/main/package.json)
+[
+![Star History](https://api.star-history.com/svg?repos=techstark/opencv-js&type=Date)
+](https://star-history.com/#techstark/opencv-js&Date)
 
-TypeScript is supported (thanks to `mirada`).
+An NPM package for OpenCV.js, providing a pre-compiled version for easy use in Node.js and browser environments.
 
-# Code Examples
+This package includes `opencv.js` from the official [OpenCV 4.10.0 release](https://docs.opencv.org/4.10.0/). The file was downloaded directly from [https://docs.opencv.org/4.10.0/opencv.js](https://docs.opencv.org/4.10.0/opencv.js).
 
-- See code examples (React, Angular) in [opencv-js-examples](https://github.com/TechStark/opencv-js-examples)
+## Key Features
 
-# Live Demo
+-   **Pre-compiled & Ready to Use:** Includes the official `opencv.js` build for version 4.10.0.
+-   **Cross-Compatible:** Works in both Node.js and browser-based projects.
+-   **TypeScript Ready:** Comes with type declarations for full TypeScript support (thanks to `mirada`).
+-   **Reliable API Reference:** Provides a `doc/cvKeys.json` file, a runtime-generated list of all available methods and properties.
 
-## Using in react.js project
+## Live Demos
 
-- See [live demo and code here](https://codesandbox.io/s/techstarkopencv-js-demo-page-f7gvk?file=/src/TestPage.jsx)
-  <img src="https://user-images.githubusercontent.com/132509/130320696-eaa3899b-2356-4e9f-bbc9-0a969465c58e.png" height="800px" alt="Live demo screenshot" />
-- Get the test image from here [Lenna.png](test/Lenna.png)
+#### Image Processing (React)
 
-## Using in Angular project
+A demo showcasing Canny edge detection on a static image.
 
-- See [code here](https://codesandbox.io/s/techstark-opencv-js-angular-demo-hkmc1n?file=/src/app/app.component.ts)
+-   **Live Demo & Code:** [CodeSandbox](https://codesandbox.io/s/techstarkopencv-js-demo-page-f7gvk?file=/src/TestPage.jsx)
+-   **Test Image:** [Lenna.png](test/Lenna.png)
 
-## Real-time face detection
+<img src="https://user-images.githubusercontent.com/132509/130320696-eaa3899b-2356-4e9f-bbc9-0a969465c58e.png" height="500px" alt="React demo showing Canny edge detection on the Lenna image" />
 
-- See [live demo and code here](https://codesandbox.io/s/opencv-js-face-detection-i1i3u)
+#### Real-time Face Detection
+
+Detects faces from a live webcam feed.
+
+-   **Live Demo & Code:** [CodeSandbox](https://codesandbox.io/s/opencv-js-face-detection-i1i3u)
+
 
 ![Real-time face detection](https://user-images.githubusercontent.com/132509/160820773-cdb023a6-77a2-4f2e-a0e9-fb06931c8f9f.gif)
 
-# How to Use
 
-- `npm install @techstark/opencv-js`
-- or `yarn add @techstark/opencv-js`
-- `import cv from "@techstark/opencv-js"`
-  - for TypeScript, set `"esModuleInterop": true` in `tsconfig.json`
-- or `import * as cv from "@techstark/opencv-js"`
+#### Angular Example
 
-# Webpack Configuration (for browser usage)
+-   **View Code:** [CodeSandbox](https://codesandbox.io/s/techstark-opencv-js-angular-demo-hkmc1n?file=/src/app/app.component.ts)
 
-If you use this package for browsers, you need to set some polyfills. In the file "webpack.config.js", set
+## Installation
+
+```bash
+npm install @techstark/opencv-js
+```
+
+or
+
+```bash
+yarn add @techstark/opencv-js
+```
+
+## Usage
+
+Import the module into your project:
+
+```javascript
+import cv from "@techstark/opencv-js";
+
+// For TypeScript, set "esModuleInterop": true in tsconfig.json
+// or use the namespace import:
+import * as cv from "@techstark/opencv-js";
+```
+
+### Browser Setup (Webpack)
+
+When using this package in the browser with Webpack, you need to add fallbacks for Node.js core modules. In your `webpack.config.js`:
 
 ```js
 module.exports = {
+  // ...
   resolve: {
-    modules: [...],
     fallback: {
       fs: false,
       path: false,
-      crypto: false
-    }
-  }
+      crypto: false,
+    },
+  },
 };
 ```
 
-# What methods and properties are available
+## API Reference
 
-The TypeScript type declarations may not be up to date with the latest OpenCV.js. Refer to [cvKeys.json](doc/cvKeys.json) to check the available methods and properties at runtime.
+The included TypeScript type declarations may not be perfectly in sync with the bundled `opencv.js` version. For a definitive, runtime-verified list of all available methods and properties, please refer to the **[`doc/cvKeys.json`](doc/cvKeys.json)** file.
 
-# Star History
+## Code Examples
 
-[![Star History Chart](https://api.star-history.com/svg?repos=techstark/opencv-js&type=Date)](https://star-history.com/#techstark/opencv-js&Date)
+For more complete project examples using React and Angular, see the [opencv-js-examples](https://github.com/TechStark/opencv-js-examples) repository.
+
+## Official Documentation
+
+For tutorials on how to use the OpenCV.js API, refer to the official [OpenCV.js Tutorials](https://docs.opencv.org/4.10.0/#:~:text=OpenCV%2DPython%20Tutorials-,OpenCV.js%20Tutorials,-Tutorials%20for%20contrib).
+
+## License
+
+Apache-2.0
